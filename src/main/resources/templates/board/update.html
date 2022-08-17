@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+<style>
+    #updateForm {
+        margin: auto;
+        width: 220px;
+        position: relative;
+        top: 150px;
+    }
+</style>
+</head>
+
+<body>
+    <h3><a th:href="@{/}">메인화면</a></h3>
+    <form id="updateForm" th:action="@{'/post/edit/' + ${boardId}}" method="post">
+        <input type="hidden" name="_method" value="put" />
+        <fieldset>
+            <legend>글 수정</legend>
+            작성자:<input type="text" name="writer" th:value="${boardDto.writer}" readonly placeholder="작성자"><br><br>
+            제목: <input type="text" name="title" th:value="${boardDto.title}" placeholder="제목"><br>
+            <!-- 유효값 에러메시지 출력 -->
+            <span th:text="${valid_title}"></span><br>
+            내용: <textarea name="content" th:text="${boardDto.content}" placeholder="내용"></textarea><br>
+            <!-- 유효값 에러메시지 출력 -->
+            <span th:text="${valid_content}"></span><br>
+            <input type="submit" value="수정">
+        </fieldset>
+    </form>
+
+    <body>
+
+    </body>
+
+</html>
