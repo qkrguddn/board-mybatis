@@ -27,18 +27,16 @@ public class BoardEntity {
     private String content;
 
     private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
     public void updateBoard(String title, String content){
         this.title = title;
         this.content = content;
     }
 @Builder
-    public BoardEntity(Long id, String writer, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public BoardEntity(Long id, String writer, String title, String content, LocalDateTime createdDate) {
         this.id = id;
         this.writer = writer;
         this.title = title;
         this.content = content;
         this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
     }
 }

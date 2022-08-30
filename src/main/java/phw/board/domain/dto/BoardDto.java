@@ -19,7 +19,6 @@ public class BoardDto {
     private String content;
 
     private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
 
     public BoardEntity dtoToEntity(){
         BoardEntity boardEntity = BoardEntity.builder()
@@ -28,17 +27,16 @@ public class BoardDto {
                 .title(title)
                 .content(content)
                 .createdDate(createdDate.now())
-                .modifiedDate(modifiedDate.now())
                 .build();
         return boardEntity;
     }
     @Builder
-    public BoardDto(Long id, String writer, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public BoardDto(Long id, String writer, String title, String content, LocalDateTime createdDate) {
         this.id = id;
         this.writer = writer;
         this.title = title;
         this.content = content;
         this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
+
     }
 }
