@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="phw.board.mapper.BoardMapper">
+
+    <insert id="saveBoard" useGeneratedKeys="true" keyProperty="id">
+        insert into mybatis (writer, title, content)
+        values (#{writer}, #{title}, #{content})
+    </insert>
+
+    <select id="getBoard" resultType="BoardDto">
+        SELECT * FROM mybatis WHERE id = #{boardId}
+    </select>
+
+    <select id="getList" resultType="BoardDto">
+        SELECT * FROM mybatis
+    </select>
+
+    <delete id="deleteBoard" parameterType="Long">
+        DELETE
+        FROM mybatis WHERE id = #{id}
+    </delete>
+
+    <update id="updateBoard" parameterType="BoardDto">
+        update mybatis
+        set
+        title=#{boardDto.title},
+        content=#{boardDto.content}
+        where id = #{boardId}
+    </update>
+
+
+</mapper>

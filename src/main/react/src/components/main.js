@@ -29,7 +29,7 @@ const Main = () => {
                             <th>작성자 </th>
                             <th>글제목 </th>
                             <th>내용 </th>
-                            <th>작성일 </th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +41,7 @@ const Main = () => {
                                         <td> {board.writer} </td>
                                         <td style={{ color: "blue" }} onClick={() => goDetail(board.id)}>{board.title}</td>
                                         <td> {board.content} </td>
-                                        <td> {board.createdDate} </td>
+
                                     </tr>
                             )
                         }

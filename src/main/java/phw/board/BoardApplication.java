@@ -3,7 +3,10 @@ package phw.board;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
+
+
 
 @SpringBootApplication
 public class BoardApplication {

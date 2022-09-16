@@ -36,9 +36,7 @@ const Detail = () => {
                     <div className="row">
                         <label> 제목: {boards.title} </label>
                     </div>
-                    <div className="row">
-                        <p> 작성일: {boards.createdDate} </p>
-                    </div>
+
                     <div className="row">
                         <label>내용 </label><br></br>
                         <textarea value={boards.content} />

@@ -13,7 +13,6 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
-//@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class BoardController {
     @Autowired
@@ -40,19 +39,19 @@ public class BoardController {
         BoardDto board = boardService.getBoard(boardId);
         return board;
     }
-    @PostMapping("/api/board")
-    public BoardDto saveBoard(@RequestBody BoardDto boardDto) {
 
-        return boardService.saveBoard(boardDto);
+    @PostMapping("/api/board")
+    public void saveBoard(@RequestBody BoardDto boardDto) {
+        boardService.saveBoard(boardDto);
     }
+
     @PutMapping("/api/board/{boardId}")
-    public BoardDto putBoard(@RequestBody BoardDto boardDto, @PathVariable Long boardId)
-    {
-        return boardService.updateBoard(boardId, boardDto);
+    public void putBoard(@RequestBody BoardDto boardDto, @PathVariable Long boardId) {
+        boardService.updateBoard(boardId, boardDto);
     }
 
     @DeleteMapping("/api/board/{boardId}")
-    public void deleteBoard(@PathVariable Long boardId){
+    public void deleteBoard(@PathVariable Long boardId) {
         boardService.deleteBoard(boardId);
     }
 
